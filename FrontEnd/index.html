@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Recipe Board</h1>
+        <p class="subtitle">Frontend starter for your recipe + comments app</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Recipes</h2>
+        <p class="hint">Below should the recipes appear</p>
+
+        <!-- Receptlistan ska renderas här -->
+        <div class="recipes">
+          <article class="recipe">
+            <h3>Example Recipe Title</h3>
+            <p class="meta">Posted by Chef Example • 15 min</p>
+            <p class="description">Short description of the recipe goes here.</p>
+            <div class="tags">
+              <span>vegetarian</span>
+              <span>easy</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Comments</h2>
+        <p class="hint">Below should the comments appear</p>
+
+        <!-- Kommentarslistan ska renderas här -->
+        <ul class="comments">
+          <li class="comment">
+            <p><strong>Student A:</strong> Looks delicious!</p>
+            <span class="meta">2026-04-02</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Add a Comment</h2>
+        <p class="hint">Form submission should connect to your server</p>
+
+        <form class="comment-form">
+          <!-- Koppla detta formulär till din backend -->
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" />
+          </label>
+
+          <label>
+            Comment
+            <textarea name="comment" rows="4" placeholder="Write a comment..."></textarea>
+          </label>
+
+          <button type="submit">Post Comment</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Starter template for student submissions</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
