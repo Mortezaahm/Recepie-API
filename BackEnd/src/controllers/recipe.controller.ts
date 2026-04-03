@@ -1,8 +1,14 @@
 import type { Request, Response } from 'express';
 
-import { getAllRecipes } from '../services/recipe.service.js';
+import { getAllRecipes, createRecipe } from '../services/recipe.service.js';
 
-export const getRecipes = async (req: Request, res: Response) => {
+export const getRecipesController = async (req: Request, res: Response) => {
   const recipes = await getAllRecipes();
   res.json(recipes);
+};
+
+export const createRecipeController = async (req: Request, res: Response) => {
+  const recipeData = req.body;
+  const newRecipe = await createRecipe(recipeData);
+  res.status(201).json(newRecipe);
 };
