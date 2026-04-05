@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import recipeRoutes from './routes/recipe.route.js';
+import commentRoutes from './routes/comment.route.js';
 
 
 
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/recipes', recipeRoutes);
+app.use('/api/comments', commentRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
