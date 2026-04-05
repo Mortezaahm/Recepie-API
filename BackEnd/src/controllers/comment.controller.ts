@@ -25,13 +25,13 @@ export const getCommentsByRecipeController = async (req: Request, res: Response)
 
 export const createCommentController = async (req: Request, res: Response) => {
     try {
-        const { recipe_id, text } = req.body;
-        if (!recipe_id || !text) {
+        const { recipe_id, text, name } = req.body;
+        if (!recipe_id || !text || !name) {
             return res.status(400).json({
                 message: "Missing fields"
             });
         }
-        const result = await createComment(recipe_id, text);
+        const result = await createComment(recipe_id, text, name);
         return res.status(201).json({
             success: true,
             commentId: result.insertId

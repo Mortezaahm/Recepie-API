@@ -14,14 +14,14 @@ export const getCommentsByRecipe = async (recipeId: string) => {
   return rows;
 };
 
-export const createComment = async (recipe_id: string, text: string) => {
-  if (!recipe_id || !text) {
+export const createComment = async (recipe_id: string, text: string, name: string) => {
+  if (!recipe_id || !text || !name) {
     throw new Error("Missing fields");
   }
 
   const [result] = await pool.execute<ResultSetHeader>(
-    "INSERT INTO comments (recipe_id, text) VALUES (?, ?)",
-    [recipe_id, text]
+    "INSERT INTO comments (recipe_id, text, name) VALUES (?, ?, ?)",
+    [recipe_id, text, name]
   );
 
   return result;
