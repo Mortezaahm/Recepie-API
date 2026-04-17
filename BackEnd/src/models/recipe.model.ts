@@ -6,7 +6,7 @@ export interface Recipe {
   ingredients: string[];
 }
 
-const recipeSchema = new Schema({
+const recipeSchema = new Schema<Recipe>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   ingredients: { type: [String], required: true }

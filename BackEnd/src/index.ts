@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import connectDB from './config/mongo.js';
 
-dotenv.config();
+// dotenv.config();
 await connectDB();
 
 import app from "./app.js";
